@@ -2,10 +2,12 @@ import React, { useState , useContext} from "react";
 import { User, Heart, ShoppingCart, Menu, X } from "lucide-react"; // Lighter icons
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
+import { SearchContext } from "../context/SearchContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
    const { cartCount, wishlistCount } = useContext(CartContext);
+   const { searchTerm, setSearchTerm } = useContext(SearchContext);
    //  const { cart = [], wishlist = [] } = useContext(CartContext) || {}; 
 
   return (
@@ -26,6 +28,8 @@ const Navbar = () => {
             type="text"
             placeholder="Search for Products"
             className="w-full max-w-2xl px-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
 
@@ -83,12 +87,23 @@ const Navbar = () => {
         <Link to="/account" className="hover:text-yellow-500" onClick={() => setIsOpen(false)}>
           <User className="w-6 h-6" strokeWidth={1.5} />
         </Link>
-        <Link to="/wishlist" className="hover:text-yellow-500" onClick={() => setIsOpen(false)}>
-          <Heart className="w-6 h-6" strokeWidth={1.5} />
-        </Link>
-        <Link to="/cart" className="hover:text-yellow-500" onClick={() => setIsOpen(false)}>
-          <ShoppingCart className="w-6 h-6" strokeWidth={1.5} />
-        </Link>
+       <Link to="/wishlist" className="relative hover:text-yellow-500">
+  <Heart className="w-6 h-6" strokeWidth={1.5} />
+  {wishlistCount > 0 && (
+    <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+      {wishlistCount}
+    </span>
+  )}
+</Link>
+
+<Link to="/cart" className="relative hover:text-yellow-500">
+  <ShoppingCart className="w-6 h-6" strokeWidth={1.5} />
+  {cartCount > 0 && (
+    <span className="absolute -top-2 -right-2 bg-yellow-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+      {cartCount}
+    </span>
+  )}
+</Link>
       </div>
     </div>
     </div>

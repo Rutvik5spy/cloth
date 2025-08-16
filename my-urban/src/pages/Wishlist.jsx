@@ -1,45 +1,51 @@
-
 import React, { useContext } from "react";
 import { CartContext } from "../context/CartContext";
+import { SearchContext } from "../context/SearchContext";
 
 export default function Wishlist() {
-  const { wishlist, removeFromWishlist,addToCart  } = useContext(CartContext);
-  
-   const moveToCart = (item) => {
-    removeFromWishlist(item.id);
-    addToCart(item);
-  };
+  const { wishlist, removeFromWishlist, addToCart } = useContext(CartContext);
+  const { searchTerm } = useContext(SearchContext);
+
+  // 🔎 Filter wishlist items
+  const filteredWishlist = wishlist.filter((item) =>
+    item.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
-    <div className="p-6">
-      <h2 className="text-2xl font-bold mb-6">❤️ My Wishlist</h2>
-      {wishlist.length === 0 ? (
-        <p>Your wishlist is empty.</p>
+    <div className="px-6 py-10">
+      <h1 className="text-3xl font-bold text-center mb-8">❤️ Wishlist</h1>
+
+      {filteredWishlist.length === 0 ? (
+        <p className="text-center text-gray-500">No items found.</p>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {wishlist.map((item) => (
-            <div key={item.id} className="border rounded-lg p-4 shadow hover:shadow-lg transition">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {filteredWishlist.map((item) => (
+            <div
+              key={item.id}
+              className="border rounded-lg shadow hover:shadow-lg transition p-4 flex flex-col"
+            >
               <img
                 src={item.image}
-               
-                className="w-full h-64 object-cover rounded"
-                onError={(e) => { e.currentTarget.src = "/images/placeholder.jpg"; }}
+                alt={item.title}
+                className="w-full h-48 object-cover rounded mb-3"
               />
-              <h3 className="mt-3 font-semibold">{item.title}</h3>
-              <p className="text-red-500 font-bold">₹{item.price}</p>
+              <h2 className="font-semibold text-lg mb-2">{item.title}</h2>
+              <p className="text-gray-700 mb-2">₹{item.price}</p>
 
-              <button
-                onClick={() => removeFromWishlist(item.id)}
-                className="mt-3 px-3 py-1 bg-red-600 text-white rounded hover:bg-red-700"
-              >
-                Remove
-              </button>
-
+              <div className="mt-auto flex gap-2">
                 <button
-                  onClick={() => moveToCart(item)}
-                  className="px-3 py-1 bg-yellow-500 text-white rounded-md hover:bg-yellow-600"
+                  onClick={() => addToCart(item)}
+                  className="flex-1 bg-yellow-500 text-white py-2 rounded hover:bg-yellow-600"
                 >
-                  Move to Cart..
+                  Move to Cart
                 </button>
+                <button
+                  onClick={() => removeFromWishlist(item.id)}
+                  className="px-3 py-2 bg-gray-100 rounded hover:bg-gray-300"
+                >
+                  ❌
+                </button>
+              </div>
             </div>
           ))}
         </div>
