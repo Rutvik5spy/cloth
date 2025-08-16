@@ -1,10 +1,10 @@
 [
   { "name": "WALLETS", "image": "https://www.urbanmonkey.com/cdn/shop/files/Group_252.png?v=1754910537&width=400", "link": "/wallets" },
-  { "name": "OVERSIZED TEES", "image": "./src/images/oversized.webp", "link": "/oversized-tees" },
-  { "name": "EYEWEAR", "image": "./src/images/eyewear.webp", "link": "/eyewear" },
-  { "name": "BACKPACKS", "image": "./src/images/backpack.webp", "link": "/backpacks" },
-  { "name": "HEADWEAR", "image": "./src/images/headwear.webp", "link": "/headwear" },
-  { "name": "SHIRTS", "image": "./src/images/shirts.webp", "link": "/shirts" },
-  { "name": "LOOP WAITLIST", "image": "./src/images/loopwait.webp", "link": "/loop-waitlist" },
-  { "name": "UPCOMING", "image": "https://www.urbanmonkey.com/cdn/shop/files/Group_252.png?v=1754910537&width=400", "link": "/upcoming" }
+  { "name": "OVERSIZED TEES", "image": "https://www.urbanmonkey.com/cdn/shop/files/Group_253.png?v=1754910567&width=400", "link": "/oversized-tees" },
+  { "name": "EYEWEAR", "image": "https://www.urbanmonkey.com/cdn/shop/files/Group_254.png?v=1754910595&width=400", "link": "/eyewear" },
+  { "name": "BACKPACKS", "image": "https://www.urbanmonkey.com/cdn/shop/files/Group_255.png?v=1754910645&width=400", "link": "/backpacks" },
+  { "name": "HEADWEAR", "image": "https://www.urbanmonkey.com/cdn/shop/files/Group_257.png?v=1754910695&width=400", "link": "/headwear" },
+  { "name": "SHIRTS", "image": "https://www.urbanmonkey.com/cdn/shop/files/Group_258.png?v=1754910750&width=400", "link": "/shirts" },
+  { "name": "LOOP WAITLIST", "image": "https://www.urbanmonkey.com/cdn/shop/files/Group_260.png?v=1754910804&width=400", "link": "/loop-waitlist" },
+  { "name": "UPCOMING", "image": "https://www.urbanmonkey.com/cdn/shop/files/Group_259.png?v=1754910854&width=400", "link": "/upcoming" }
 ]
