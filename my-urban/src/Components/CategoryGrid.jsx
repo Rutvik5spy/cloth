@@ -4,17 +4,25 @@ import { Link } from "react-router-dom";
 
 export default function CategoryGrid() {
   const [categories, setCategories] = useState([]);
+  // eslint-disable-next-line no-unused-vars
   const [err, setErr] = useState("");
 
+  // useEffect(() => {
+  //   fetch("/categories.json")
+  //     .then((r) => {
+  //       if (!r.ok) throw new Error(`HTTP ${r.status}`);
+  //       return r.json();
+  //     })
+  //     .then(setCategories)
+  //     .catch((e) => setErr(`Failed to load categories: ${e.message}`));
+  // }, []);
   useEffect(() => {
-    fetch("/categories.json")
-      .then((r) => {
-        if (!r.ok) throw new Error(`HTTP ${r.status}`);
-        return r.json();
-      })
-      .then(setCategories)
-      .catch((e) => setErr(`Failed to load categories: ${e.message}`));
-  }, []);
+  fetch("/categories.json")
+    .then((res) => res.json())
+    .then((data) => setCategories(data))
+    .catch((err) => console.error("Failed to load categories:", err));
+}, []);
+
 
   if (err) {
     return <div className="text-red-600 p-4">{err}</div>;
