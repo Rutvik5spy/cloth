@@ -1,0 +1,10 @@
+[
+  { "name": "WALLETS", "image": "./src/images/wallets.webp", "link": "/wallets" },
+  { "name": "OVERSIZED TEES", "image": "./src/images/oversized.webp", "link": "/oversized-tees" },
+  { "name": "EYEWEAR", "image": "./src/images/eyewear.webp", "link": "/eyewear" },
+  { "name": "BACKPACKS", "image": "./src/images/backpack.webp", "link": "/backpacks" },
+  { "name": "HEADWEAR", "image": "./src/images/headwear.webp", "link": "/headwear" },
+  { "name": "SHIRTS", "image": "./src/images/shirts.webp", "link": "/shirts" },
+  { "name": "LOOP WAITLIST", "image": "./src/images/loopwait.webp", "link": "/loop-waitlist" },
+  { "name": "UPCOMING", "image": "./src/images/upcoming.webp", "link": "/upcoming" }
+]
