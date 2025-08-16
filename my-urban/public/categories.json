@@ -1,10 +1,10 @@
 [
-  { "name": "WALLETS", "image": "./src/images/wallets.webp", "link": "/wallets" },
+  { "name": "WALLETS", "image": "https://www.urbanmonkey.com/cdn/shop/files/Group_252.png?v=1754910537&width=400", "link": "/wallets" },
   { "name": "OVERSIZED TEES", "image": "./src/images/oversized.webp", "link": "/oversized-tees" },
   { "name": "EYEWEAR", "image": "./src/images/eyewear.webp", "link": "/eyewear" },
   { "name": "BACKPACKS", "image": "./src/images/backpack.webp", "link": "/backpacks" },
   { "name": "HEADWEAR", "image": "./src/images/headwear.webp", "link": "/headwear" },
   { "name": "SHIRTS", "image": "./src/images/shirts.webp", "link": "/shirts" },
   { "name": "LOOP WAITLIST", "image": "./src/images/loopwait.webp", "link": "/loop-waitlist" },
-  { "name": "UPCOMING", "image": "./src/images/upcoming.webp", "link": "/upcoming" }
+  { "name": "UPCOMING", "image": "https://www.urbanmonkey.com/cdn/shop/files/Group_252.png?v=1754910537&width=400", "link": "/upcoming" }
 ]
