@@ -38,7 +38,7 @@ export default function Wishlist() {
                   onClick={() => moveToCart(item)}
                   className="px-3 py-1 bg-yellow-500 text-white rounded-md hover:bg-yellow-600"
                 >
-                  Move to Cart
+                  Move to Cart..
                 </button>
             </div>
           ))}
